@@ -1,0 +1,231 @@
+// Button Component Styles
+
+.btn {
+  @include button-base;
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-sm;
+  
+  &--large {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: $font-size-base;
+  }
+  
+  &--small {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-xs;
+  }
+  
+  &--primary {
+    @include button-primary;
+  }
+  
+  &--secondary {
+    @include button-secondary;
+  }
+  
+  &--danger {
+    @include button-base;
+    background-color: $danger-color;
+    color: $white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($danger-color, 10%);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &--success {
+    @include button-base;
+    background-color: $success-color;
+    color: $white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($success-color, 10%);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &--ghost {
+    @include button-base;
+    background-color: transparent;
+    color: $primary-color;
+    border: $border-width solid $primary-color;
+    
+    &:hover:not(:disabled) {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+  
+  &--icon-only {
+    padding: $spacing-md;
+    width: 40px;
+    height: 40px;
+    
+    &.btn--large {
+      width: 48px;
+      height: 48px;
+      padding: $spacing-lg;
+    }
+    
+    &.btn--small {
+      width: 32px;
+      height: 32px;
+      padding: $spacing-sm;
+    }
+  }
+  
+  &__text {
+    // For buttons with both icon and text
+  }
+  
+  &__icon {
+    // For button icons
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Loading state
+  &--loading {
+    position: relative;
+    color: transparent;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: button-spin 0.6s linear infinite;
+    }
+  }
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Specific button styles
+.header__cart {
+  @include button-base;
+  background: none;
+  border: $border-width solid $gray-300;
+  border-radius: $border-radius-md;
+  padding: $spacing-sm;
+  position: relative;
+  
+  &:hover {
+    background-color: $gray-50;
+  }
+}
+
+.cart__count {
+  background-color: $danger-color;
+  color: $white;
+  border-radius: $border-radius-full;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.gallery__zoom {
+  position: absolute;
+  top: $spacing-lg;
+  right: $spacing-lg;
+  background: rgba($white, 0.9);
+  border: none;
+  border-radius: $border-radius-full;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: $transition-base;
+  
+  &:hover {
+    background: $white;
+    transform: scale(1.1);
+  }
+}
+
+.gallery__thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: $border-width-2 solid transparent;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  cursor: pointer;
+  transition: $transition-base;
+  
+  &--active {
+    border-color: $primary-color;
+  }
+  
+  &:hover {
+    border-color: $gray-400;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @include respond-to(tablet) {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+.tabs__tab {
+  background: none;
+  border: none;
+  padding: $spacing-lg $spacing-xl;
+  cursor: pointer;
+  font-weight: $font-weight-medium;
+  color: $gray-500;
+  border-bottom: $border-width-2 solid transparent;
+  transition: $transition-base;
+  white-space: nowrap;
+  
+  &:hover {
+    color: $primary-color;
+  }
+  
+  &--active {
+    color: $primary-color;
+    border-bottom-color: $primary-color;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+  
+  @include respond-to(desktop) {
+    padding: $spacing-lg $spacing-2xl;
+  }
+}

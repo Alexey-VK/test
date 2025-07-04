@@ -1,0 +1,175 @@
+// Footer Component Styles
+
+.footer {
+  background-color: $gray-800;
+  color: $white;
+  padding: $spacing-2xl 0 $spacing-lg;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__content {
+    display: grid;
+    gap: $spacing-2xl;
+    margin-bottom: $spacing-2xl;
+    
+    @include respond-to(tablet) {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: $spacing-3xl;
+    }
+    
+    @include respond-to(desktop) {
+      gap: $spacing-4xl;
+    }
+  }
+  
+  &__section {
+    // Individual footer sections
+  }
+  
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    color: $white;
+  }
+  
+  &__subtitle {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    color: $gray-300;
+  }
+  
+  &__text {
+    color: $gray-400;
+    line-height: $line-height-relaxed;
+    font-size: $font-size-sm;
+  }
+  
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__list li {
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__link {
+    color: $gray-400;
+    text-decoration: none;
+    transition: $transition-base;
+    font-size: $font-size-sm;
+    display: inline-block;
+    padding: $spacing-xs 0;
+    
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+    
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+      border-radius: $border-radius-sm;
+    }
+  }
+  
+  &__bottom {
+    border-top: $border-width solid lighten($gray-800, 10%);
+    padding-top: $spacing-lg;
+    text-align: center;
+    
+    @include respond-to(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  &__copyright {
+    color: $gray-400;
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+}
+
+// Social links (if needed in future)
+.footer__social {
+  display: flex;
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+  
+  @include respond-to(tablet) {
+    margin-top: 0;
+  }
+  
+  &-link {
+    color: $gray-400;
+    text-decoration: none;
+    transition: $transition-base;
+    padding: $spacing-sm;
+    border-radius: $border-radius-sm;
+    
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: lighten($gray-800, 10%);
+    }
+    
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Newsletter signup (if needed in future)
+.footer__newsletter {
+  margin-top: $spacing-xl;
+  
+  &-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $white;
+    margin-bottom: $spacing-md;
+  }
+  
+  &-form {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+  
+  &-input {
+    flex: 1;
+    min-width: 200px;
+    padding: $spacing-sm $spacing-md;
+    border: $border-width solid lighten($gray-800, 15%);
+    border-radius: $border-radius-sm;
+    background-color: lighten($gray-800, 5%);
+    color: $white;
+    
+    &::placeholder {
+      color: $gray-400;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+  }
+  
+  &-button {
+    @include button-primary;
+    padding: $spacing-sm $spacing-lg;
+  }
+}

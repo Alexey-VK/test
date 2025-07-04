@@ -1,0 +1,78 @@
+// Breadcrumb Component Styles
+
+.breadcrumb {
+  background-color: $gray-50;
+  border-bottom: $border-width solid $gray-200;
+  
+  &__container {
+    @include container;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+  }
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: $spacing-sm;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-sm;
+    
+    &:not(:last-child)::after {
+      content: "›";
+      margin-left: $spacing-sm;
+      color: $gray-500;
+      font-weight: $font-weight-normal;
+    }
+    
+    &--current {
+      color: $gray-800;
+      font-weight: $font-weight-medium;
+    }
+  }
+  
+  &__link {
+    color: $gray-600;
+    text-decoration: none;
+    transition: $transition-base;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    
+    &:hover {
+      color: $primary-color;
+      background-color: $white;
+    }
+    
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
+  
+  &__text {
+    color: $gray-800;
+    font-weight: $font-weight-medium;
+    padding: $spacing-xs $spacing-sm;
+  }
+}
+
+// Responsive adjustments
+@include respond-to(tablet) {
+  .breadcrumb {
+    &__container {
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+    }
+    
+    &__item {
+      font-size: $font-size-base;
+    }
+  }
+}
