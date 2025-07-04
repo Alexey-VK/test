@@ -1,48 +1,345 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Invoicing settings page</title>
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Wireless Headphones - High-quality audio experience with noise cancellation">
+    <title>Premium Wireless Headphones | AudioTech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="pt-5 col-md-5">
-                <div class="detailed mt-3" id="detailed-group">
-                    <div class="form-group mb-3">
-                        <label for="startDate">Start date</label>
-                        <input data-date-format="yyyy-mm-dd" data-date-language="fr" data-date-min-view-mode="1" data-date-autoclose="true" class="form-control month-picker__input" placeholder="YYYY-MM-DD"
-                            aria-label="startDate" aria-describedby="startDate" id="startDate" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="startDate">End date</label>
-                        <input data-date-format="yyyy-mm-dd" data-date-language="fr" data-date-min-view-mode="1" data-date-autoclose="true" class="form-control month-picker__input" placeholder="YYYY-MM-DD"
-                            aria-label="endDate" aria-describedby="endDate" id="endDate" />
-                    </div>
-                </div>
-                <button type="button" id="submitButton" class="btn btn-success">
-                    Get invoice Data!
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="#" class="header__logo-link" aria-label="AudioTech Home">
+                    <span class="header__logo-text">AudioTech</span>
+                </a>
+            </div>
+            
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Products</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Support</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="header__cart" aria-label="Shopping cart (0 items)">
+                    <span class="cart__icon" aria-hidden="true">🛒</span>
+                    <span class="cart__count">0</span>
                 </button>
             </div>
         </div>
-    </div>
-    <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    </header>
 
-    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
-    <script src="js/invoice.js" type="text/javascript"></script>
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+            <div class="breadcrumb__container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Home</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Audio</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Headphones</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                        Premium Wireless
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Product Section -->
+        <section class="product" aria-labelledby="product-title">
+            <div class="product__container">
+                <!-- Product Gallery -->
+                <div class="product__gallery">
+                    <div class="gallery">
+                        <div class="gallery__main">
+                            <img 
+                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" 
+                                alt="Premium Wireless Headphones - Main view" 
+                                class="gallery__main-image"
+                                id="main-product-image"
+                            >
+                            <button class="gallery__zoom" aria-label="Zoom image">
+                                <span aria-hidden="true">🔍</span>
+                            </button>
+                        </div>
+                        
+                        <div class="gallery__thumbnails" role="tablist" aria-label="Product image gallery">
+                            <button 
+                                class="gallery__thumbnail gallery__thumbnail--active" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="main-product-image"
+                                aria-label="View main product image"
+                            >
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop" alt="Main view thumbnail">
+                            </button>
+                            <button 
+                                class="gallery__thumbnail" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="main-product-image"
+                                aria-label="View side angle"
+                            >
+                                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=100&h=100&fit=crop" alt="Side view thumbnail">
+                            </button>
+                            <button 
+                                class="gallery__thumbnail" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="main-product-image"
+                                aria-label="View wearing position"
+                            >
+                                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&h=100&fit=crop" alt="Wearing view thumbnail">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product__info">
+                    <div class="product__badges">
+                        <span class="badge badge--new">New</span>
+                        <span class="badge badge--bestseller">Bestseller</span>
+                    </div>
+                    
+                    <h1 id="product-title" class="product__title">
+                        Premium Wireless Headphones
+                    </h1>
+                    
+                    <div class="product__rating">
+                        <div class="rating" aria-label="4.8 out of 5 stars">
+                            <span class="rating__stars" aria-hidden="true">★★★★★</span>
+                            <span class="rating__score">4.8</span>
+                            <a href="#reviews" class="rating__reviews">(247 reviews)</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product__price">
+                        <span class="price price--current">$299.99</span>
+                        <span class="price price--original">$399.99</span>
+                        <span class="price__discount">25% off</span>
+                    </div>
+                    
+                    <div class="product__description">
+                        <p>Experience premium sound quality with our latest wireless headphones featuring active noise cancellation, 30-hour battery life, and exceptional comfort for all-day listening.</p>
+                    </div>
+                    
+                    <!-- Product Options -->
+                    <div class="product__options">
+                        <div class="option-group">
+                            <label class="option-group__label" for="color-select">Color</label>
+                            <div class="color-picker" role="radiogroup" aria-labelledby="color-label">
+                                <input type="radio" id="color-black" name="color" value="black" class="color-picker__input" checked>
+                                <label for="color-black" class="color-picker__option color-picker__option--black" aria-label="Midnight Black">
+                                    <span class="color-picker__color"></span>
+                                </label>
+                                
+                                <input type="radio" id="color-white" name="color" value="white" class="color-picker__input">
+                                <label for="color-white" class="color-picker__option color-picker__option--white" aria-label="Arctic White">
+                                    <span class="color-picker__color"></span>
+                                </label>
+                                
+                                <input type="radio" id="color-blue" name="color" value="blue" class="color-picker__input">
+                                <label for="color-blue" class="color-picker__option color-picker__option--blue" aria-label="Ocean Blue">
+                                    <span class="color-picker__color"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label for="quantity" class="option-group__label">Quantity</label>
+                            <div class="quantity-selector">
+                                <button type="button" class="quantity-selector__btn" aria-label="Decrease quantity">-</button>
+                                <input type="number" id="quantity" class="quantity-selector__input" value="1" min="1" max="10" aria-label="Quantity">
+                                <button type="button" class="quantity-selector__btn" aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div class="product__actions">
+                        <button class="btn btn--primary btn--large" type="button">
+                            Add to Cart
+                        </button>
+                        <button class="btn btn--secondary btn--large" type="button" aria-label="Add to wishlist">
+                            <span aria-hidden="true">♡</span>
+                            <span class="btn__text">Wishlist</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="product__features">
+                        <div class="feature">
+                            <span class="feature__icon" aria-hidden="true">🚚</span>
+                            <span class="feature__text">Free shipping on orders over $50</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon" aria-hidden="true">↩️</span>
+                            <span class="feature__text">30-day free returns</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon" aria-hidden="true">🛡️</span>
+                            <span class="feature__text">2-year warranty included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details Tabs -->
+        <section class="product-details" aria-labelledby="details-heading">
+            <div class="product-details__container">
+                <h2 id="details-heading" class="sr-only">Product Details</h2>
+                
+                <div class="tabs" role="tablist" aria-label="Product information">
+                    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-controls="specifications-panel" id="specifications-tab">
+                        Specifications
+                    </button>
+                    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="reviews-panel" id="reviews-tab">
+                        Reviews
+                    </button>
+                    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="shipping-panel" id="shipping-tab">
+                        Shipping
+                    </button>
+                </div>
+                
+                <div class="tabs__content">
+                    <div id="specifications-panel" class="tabs__panel tabs__panel--active" role="tabpanel" aria-labelledby="specifications-tab">
+                        <div class="specifications">
+                            <div class="spec-group">
+                                <h3 class="spec-group__title">Audio</h3>
+                                <dl class="spec-list">
+                                    <dt class="spec-list__term">Driver Size</dt>
+                                    <dd class="spec-list__desc">40mm dynamic drivers</dd>
+                                    
+                                    <dt class="spec-list__term">Frequency Response</dt>
+                                    <dd class="spec-list__desc">20Hz - 20kHz</dd>
+                                    
+                                    <dt class="spec-list__term">Impedance</dt>
+                                    <dd class="spec-list__desc">32 ohms</dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="spec-group">
+                                <h3 class="spec-group__title">Battery & Connectivity</h3>
+                                <dl class="spec-list">
+                                    <dt class="spec-list__term">Battery Life</dt>
+                                    <dd class="spec-list__desc">30 hours (ANC off), 20 hours (ANC on)</dd>
+                                    
+                                    <dt class="spec-list__term">Charging Time</dt>
+                                    <dd class="spec-list__desc">2 hours (full charge), 15 min (3 hours playback)</dd>
+                                    
+                                    <dt class="spec-list__term">Connectivity</dt>
+                                    <dd class="spec-list__desc">Bluetooth 5.2, USB-C, 3.5mm jack</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="reviews-panel" class="tabs__panel" role="tabpanel" aria-labelledby="reviews-tab">
+                        <div class="reviews" id="reviews">
+                            <div class="reviews__summary">
+                                <div class="reviews__score">
+                                    <span class="reviews__score-number">4.8</span>
+                                    <div class="reviews__score-stars" aria-label="4.8 out of 5 stars">★★★★★</div>
+                                    <span class="reviews__score-count">Based on 247 reviews</span>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-item__header">
+                                    <strong class="review-item__author">Sarah M.</strong>
+                                    <div class="review-item__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                                </div>
+                                <p class="review-item__text">Absolutely amazing sound quality! The noise cancellation works perfectly and the battery life is exactly as advertised.</p>
+                                <time class="review-item__date" datetime="2024-01-15">January 15, 2024</time>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-item__header">
+                                    <strong class="review-item__author">Mike R.</strong>
+                                    <div class="review-item__rating" aria-label="4 out of 5 stars">★★★★☆</div>
+                                </div>
+                                <p class="review-item__text">Great headphones for the price. Very comfortable for long listening sessions. Only minor complaint is they're a bit bulky for travel.</p>
+                                <time class="review-item__date" datetime="2024-01-10">January 10, 2024</time>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="shipping-panel" class="tabs__panel" role="tabpanel" aria-labelledby="shipping-tab">
+                        <div class="shipping-info">
+                            <h3>Shipping Options</h3>
+                            <ul>
+                                <li><strong>Standard Shipping:</strong> 5-7 business days (Free on orders over $50)</li>
+                                <li><strong>Express Shipping:</strong> 2-3 business days ($9.99)</li>
+                                <li><strong>Overnight Shipping:</strong> Next business day ($19.99)</li>
+                            </ul>
+                            
+                            <h3>Return Policy</h3>
+                            <p>We offer a 30-day return policy for all unopened items in original packaging. Items must be in new, unused condition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">AudioTech</h3>
+                    <p class="footer__text">Premium audio equipment for music enthusiasts worldwide.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">About Us</a></li>
+                        <li><a href="#" class="footer__link">Products</a></li>
+                        <li><a href="#" class="footer__link">Support</a></li>
+                        <li><a href="#" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Customer Service</h4>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Shipping Info</a></li>
+                        <li><a href="#" class="footer__link">Returns</a></li>
+                        <li><a href="#" class="footer__link">Warranty</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 AudioTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
